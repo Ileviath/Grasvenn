@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grasven | 100+ Ücretsiz Nickname ve Uygulama Önerileri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Stil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gold: #FFD700;
+            --dark-gold: #D4AF37;
+            --dark-bg: #0a0a10;
+            --darker-bg: #050508;
+            --card-bg: rgba(20, 20, 30, 0.7);
+            --soft-white: #f1f1f1;
+            --text-gray: #a0a0b0;
+            --neon-blue: #00ccff;
+            --neon-pink: #ff2d95;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 70%);
+            color: var(--soft-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, .logo, .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Animasyonlar */
+        @keyframes shine {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Logo ve Başlık */
+        .logo {
+            font-size: 3.5rem;
+            text-align: center;
+            margin: 30px 0;
+            background: linear-gradient(
+                90deg,
+                var(--gold) 0%,
+                #FFFFFF 25%,
+                var(--gold) 50%,
+                #FFFFFF 75%,
+                var(--gold) 100%
+            );
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(5, 5, 8, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* Navigasyon */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--soft-white);
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            margin: 0 5px;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--soft-white);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Butonlar */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+            color: #000;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            z-index: 1;
+            margin: 10px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--dark-gold), var(--gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* Bölümler */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--soft-white);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+            margin: 25px auto;
+            border-radius: 2px;
+        }
+        
+        /* Nickname Grid */
+        .nickname-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .nickname-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .nickname-card:nth-child(2n) {
+            animation-delay: 1s;
+        }
+        
+        .nickname-card:nth-child(3n) {
+            animation-delay: 2s;
+        }
+        
+        .nickname-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        
+        .nickname-text {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nickname-desc {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+        
+        /* Kategori Filtreleme */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50px;
+            color: var(--soft-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--gold);
+            color: #000;
+        }
+        
+        /* Uygulama Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .app-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 204, 255, 0.2);
+            border-color: rgba(0, 204, 255, 0.3);
+        }
+        
+        .app-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-align: center;
+        }
+        
+        .app-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--soft-white);
+        }
+        
+        .app-desc {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .app-download {
+            display: inline-block;
+            background: rgba(0, 204, 255, 0.1);
+            color: var(--neon-blue);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .app-download:hover {
+            background: rgba(0, 204, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .category-filter {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .site-logo {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+                margin: 5px;
+            }
+            
+            .nickname-text {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="site-logo">Grasven</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#nicknames">Nicknameler</a></li>
+                        <li><a href="#apps">Uygulamalar</a></li>
+                        <li><a href="#about">Hakkında</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">GRASVEN</div>
+                <h1>100+ Ücretsiz Nickname ve Faydalı Uygulama Önerileri</h1>
+                <p>Oyunlarınız için havalı nicknameler ve günlük hayatınızı kolaylaştıracak az bilinen uygulamalar</p>
+                <div>
+                    <a href="#nicknames" class="btn">Nicknameleri Gör</a>
+                    <a href="#apps" class="btn">Uygulamaları Keşfet</a>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Nicknameler -->
+    <section id="nicknames">
+        <div class="container">
+            <div class="section-title">
+                <h2>100+ Özel Nickname Önerileri</h2>
+                <p>Oyunlarınızda kullanabileceğiniz havalı, estetik ve tehlikeli havası olan nicknameler</p>
+            </div>
+            
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">Tümü</button>
+                <button class="filter-btn" data-category="estetik">Estetik</button>
+                <button class="filter-btn" data-category="tehlikeli">Tehlikeli</button>
+                <button class="filter-btn" data-category="gizemli">Gizemli</button>
+                <button class="filter-btn" data-category="güclü">Güçlü</button>
+            </div>
+            
+            <div class="nickname-grid">
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Acheron</div>
+                    <p class="nickname-desc">Mitolojik ve gizemli bir hava katacak</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Raizen</div>
+                    <p class="nickname-desc">Güçlü ve etkileyici bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Shinrai</div>
+                    <p class="nickname-desc">Japonca'da "güven" anlamına gelen estetik bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Raikage</div>
+                    <p class="nickname-desc">Naruto'dan esinlenmiş, güçlü bir karakter</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Say my name7</div>
+                    <p class="nickname-desc">Breaking Bad referanslı havalı bir nickname</p>
+                </div>
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Shinkai</div>
+                    <p class="nickname-desc">Japonca'da "derin deniz" anlamına gelen estetik bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Pain</div>
+                    <p class="nickname-desc">Naruto'dan güçlü ve karizmatik bir karakter</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Zephyr</div>
+                    <p class="nickname-desc">Yunan mitolojisinde batı rüzgarı tanrısı</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Kageoni</div>
+                    <p class="nickname-desc">Gölgelerin efendisi anlamında</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Nexus</div>
+                    <p class="nickname-desc">Merkez, bağlantı noktası anlamına gelen modern bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Vortex</div>
+                    <p class="nickname-desc">Girdap anlamına gelen güçlü bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Onyx</div>
+                    <p class="nickname-desc">Değerli siyah bir taşın adı, gücü simgeler</p>
+                </div>
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Kairos</div>
+                    <p class="nickname-desc">Yunan mitolojisinde doğru zaman tanrısı</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Viper</div>
+                    <p class="nickname-desc">Zehirli bir yılan türü, tehlikeli havası var</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Titan</div>
+                    <p class="nickname-desc">Devasa gücü simgeleyen mitolojik varlık</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Nyx</div>
+                    <p class="nickname-desc">Yunan mitolojisinde gece tanrıçası</p>
+                </div>
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Seraphim</div>
+                    <p class="nickname-desc">Yüksek melek sınıfı, ilahi bir estetik</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Reaper</div>
+                    <p class="nickname-desc">Azrail, ölümü çağrıştıran tehlikeli bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Valor</div>
+                    <p class="nickname-desc">Cesaret ve kahramanlık anlamına gelir</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Eclipse</div>
+                    <p class="nickname-desc">Güneş veya ay tutulması, gizemli bir doğa olayı</p>
+                </div>
+                <!-- 80+ daha nickname buraya eklenecek -->
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Aether</div>
+                    <p class="nickname-desc">Yunan mitolojisinde gökyüzü ve havanın tanrısı</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Ragnarok</div>
+                    <p class="nickname-desc">İskandinav mitolojisinde kıyamet günü</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Odin</div>
+                    <p class="nickname-desc">İskandinav mitolojisinde tanrıların babası</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Sphinx</div>
+                    <p class="nickname-desc">Eski Mısır'dan gizemli bir yaratık</p>
+                </div>
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Celestia</div>
+                    <p class="nickname-desc">Göksel, cennetsel anlamında estetik bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Havoc</div>
+                    <p class="nickname-desc">Kaos ve yıkım anlamına gelen tehlikeli bir isim</p>
+                </div>
+                <div class="nickname-card" data-category="güclü">
+                    <div class="nickname-text">Thor</div>
+                    <p class="nickname-desc">İskandinav mitolojisinde gök gürültüsü tanrısı</p>
+                </div>
+                <div class="nickname-card" data-category="gizemli">
+                    <div class="nickname-text">Enigma</div>
+                    <p class="nickname-desc">Gizem, bilinmezlik anlamına gelir</p>
+                </div>
+                <div class="nickname-card" data-category="estetik">
+                    <div class="nickname-text">Lumina</div>
+                    <p class="nickname-desc">Işık saçan, parıldayan anlamında estetik isim</p>
+                </div>
+                <div class="nickname-card" data-category="tehlikeli">
+                    <div class="nickname-text">Venom</div>
+                    <p class="nickname-desc">Zehir anlamına gelen tehlikeli bir isim</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Uygulamalar -->
+    <section id="apps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Faydalı Uygulama Önerileri</h2>
+                <p>Günlük hayatınızı kolaylaştıracak az bilinen ama çok faydalı uygulamalar</p>
+            </div>
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="app-icon"><i class="fab fa-android"></i></div>
+                    <h3 class="app-title">F-Droid</h3>
+                    <p class="app-desc">Açık kaynak kodlu Android uygulamalarının mağazası. Google Play Store alternatifi olarak ücretsiz ve güvenli uygulamalar sunar.</p>
+                    <a href="https://f-droid.org/" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-play-circle"></i></div>
+                    <h3 class="app-title">Vanced</h3>
+                    <p class="app-desc">YouTube'un geliştirilmiş versiyonu. Reklamsız, arka planda çalışabilen ve premium özelliklere sahip ücretsiz bir uygulama.</p>
+                    <a href="https://vancedapp.com/" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-sticky-note"></i></div>
+                    <h3 class="app-title">Notion</h3>
+                    <p class="app-desc">Not alma, proje yönetimi ve organizasyon için gelişmiş bir araç. AI destekli özellikleriyle üretkenliği artırır.</p>
+                    <a href="https://www.notion.so/" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="app-title">Deep-Seek</h3>
+                    <p class="app-desc">Gelişmiş yapay zeka tabanlı arama ve metin işleme aracı. Metin özetleme, çeviri ve içerik oluşturma için idealdir.</p>
+                    <a href="https://www.deepseek.com/" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="app-title">NetGuard</h3>
+                    <p class="app-desc">Root gerektirmeyen basit bir güvenlik duvarı uygulaması. Belirli uygulamaların internete erişimini engellemenizi sağlar.</p>
+                    <a href="https://github.com/M66B/NetGuard" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-download"></i></div>
+                    <h3 class="app-title">1DM+</h3>
+                    <p class="app-desc">Gelişmiş indirme yöneticisi. Video indirme, hızlandırılmış indirme ve dosya yönetimi özelliklerine sahiptir.</p>
+                    <a href="https://play.google.com/store/apps/details?id=idm.internet.download.manager.plus" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="app-title">Solid Explorer</h3>
+                    <p class="app-desc">Gelişmiş dosya yöneticisi. Cloud depolama entegrasyonu, root erişimi ve çift panel arayüzü sunar.</p>
+                    <a href="https://play.google.com/store/apps/details?id=pl.solidexplorer2" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-music"></i></div>
+                    <h3 class="app-title">ViMusic</h3>
+                    <p class="app-desc">YouTube Music alternatifi. Reklamsız, arka planda çalışabilen ve ücretsiz müzik dinleme uygulaması.</p>
+                    <a href="https://github.com/vfsfitvnm/ViMusic" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-ad"></i></div>
+                    <h3 class="app-title">AdAway</h3>
+                    <p class="app-desc">Root gerektiren reklam engelleme uygulaması. Tüm uygulamalardaki reklamları engeller.</p>
+                    <a href="https://adaway.org/" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-key"></i></div>
+                    <h3 class="app-title">Bitwarden</h3>
+                    <p class="app-desc">Açık kaynak kodlu şifre yöneticisi. Tüm cihazlarınızda şifrelerinizi güvenle saklar.</p>
+                    <a href="https://bitwarden.com/" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                    <h3 class="app-title">RAR</h3>
+                    <p class="app-desc">Gelişmiş sıkıştırma ve arşivleme uygulaması. Tüm formatları destekler ve şifreleme özelliği sunar.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.rarlab.rar" class="app-download">İndir</a>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-moon"></i></div>
+                    <h3 class="app-title">Twilight</h3>
+                    <p class="app-desc">Mavi ışık filtresi uygulaması. Gece kullanımında göz yorgunluğunu azaltır.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.urbandroid.lux" class="app-download">İndir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkında -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Grasven Hakkında</h2>
+                <p>Ücretsiz nickname önerileri ve faydalı uygulamalar sunan platform</p>
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-gray);">
+                    Grasven, oyun severlere ücretsiz nickname önerileri sunan ve günlük hayatı kolaylaştıran az bilinen uygulamaları tanıtan bir platformdur. Amacımız, kullanıcıların dijital dünyada kendilerini ifade edebilecekleri havalı nicknameler bulmalarına ve verimliliklerini artıracak uygulamalar keşfetmelerine yardımcı olmaktır.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-gray);">
+                    Tüm içeriklerimiz tamamen ücretsizdir. Hiçbir şekilde ücret talep etmiyoruz veya kullanıcı verileri toplamıyoruz.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--darker-bg); padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div class="site-logo" style="font-size: 2.5rem; margin-bottom: 20px;">Grasven</div>
+                <p style="color: var(--text-gray); margin-bottom: 30px;">Ücretsiz nickname önerileri ve faydalı uygulamalar</p>
+                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                    <a href="#" style="display: inline-block; color: var(--gold); font-size: 1.5rem; margin: 0 10px; transition: all 0.3s ease;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="display: inline-block; color: var(--gold); font-size: 1.5rem; margin: 0 10px; transition: all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="display: inline-block; color: var(--gold); font-size: 1.5rem; margin: 0 10px; transition: all 0.3s ease;"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: var(--text-gray); font-size: 0.9rem;">&copy; 2023 Grasven. Tüm hakları saklıdır. | Ücretsiz Nickname ve Uygulama Önerileri</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Kategori filtreleme
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const nicknameCards = document.querySelectorAll('.nickname-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Aktif buton sınıfını güncelle
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const category = button.getAttribute('data-category');
+                    
+                    // Kartları filtrele
+                    nicknameCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Nicknameler için rastgele opaklık efekti
+            const nicknameElements = document.querySelectorAll('.nickname-text');
+            
+            setInterval(() => {
+                nicknameElements.forEach(el => {
+                    el.style.opacity = Math.random() * 0.2 + 0.8;
+                });
+            }, 2000);
+            
+            // Kaydırma animasyonu
+            const scrollElements = document.querySelectorAll('.nickname-card, .app-card');
+            
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            
+            const displayScrollElement = (element) => {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+            };
+            
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.2)) {
+                        displayScrollElement(el);
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+            
+            // İlk yüklemede animasyonu tetikle
+            setTimeout(handleScrollAnimation, 500);
+        });
+    </script>
+</body>
+</html>
